@@ -1,0 +1,60 @@
+﻿@model Author;  
+
+    <div class='form-control-group'>
+        <label for="name" class="form-label">Name</label>
+        <input name="name" id="name" class="form-control" value="@Model.Name"/>
+        <small class='text-danger'>@Html.ValidationMessageFor(m=>m.Name)</small>
+    </div>
+
+    <div class='form-control-group'>
+        <label for="bio" class="form-label">Biography</label>
+        <textarea name="biography" id="bio" class="form-control">@Model.Biography </textarea>
+        <small class='text-danger'>@Html.ValidationMessageFor(m=>m.Biography)</small>
+    </div>
+
+    <div class='form-control-group'>
+        <label for="photoUrl" class="form-label">Photo Url</label>
+        <input name="photourl" id="photourl" class="form-control" value="@Model.PhotoUrl" />
+        <small class='text-danger'>@Html.ValidationMessageFor(m=>m.PhotoUrl)</small>
+    </div>
+
+     <div class='form-control-group'>
+        <label for="tags" class="form-label">Tags</label>
+        <input name="tags" id="tags" class="form-control" value="@Model.Tags" />
+        <small class='text-danger'>@Html.ValidationMessageFor(m=>m.Tags)</small>
+    </div>
+    <fieldset>
+        <legend>Dates</legend>
+        <div class="row">
+            <div class="col">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input name="birthdate" id="birthdate" type="text" placeholder="yyyy-mm-dd" class="form-control" value="@Model.BirthDate"/>
+                <small class='text-danger'>@Html.ValidationMessageFor(m=>m.BirthDate)</small>
+
+            </div>
+            <div class="col">
+                <label for="deathdate" class="form-label">Death Date</label>
+                <input name="deathdate" type="text" id="deathdate" placeholder="yyyy-mm-dd" class="form-control" value="@Model.DeathDate"/>
+                <small> (Leave Blank for Happy Case)</small>
+                <small class='text-danger'>@Html.ValidationMessageFor(m=>m.DeathDate)</small>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Social</legend>
+
+        <div class="row">
+            <div class="col-6">
+                 <label for="email" class="form-label">Email</label>
+                 <input name="social.email" id="social.email" type="text" class="form-control" value="@Model.Social.Email"/>
+                 <small class='text-danger'>@Html.ValidationMessageFor(m=>m.Social.Id)</small>
+            </div>
+            <div class="col-6">
+                <label for="website" class="form-label">WebSite</label>
+                <input name="social.website" id="social.website" type="text" class="form-control" value="@Model.Social.WebSite" />
+                <small class='text-danger'>@Html.ValidationMessageFor(m=>m.Social.WebSite)</small>
+            </div>
+        </div>
+    </fieldset>
+    

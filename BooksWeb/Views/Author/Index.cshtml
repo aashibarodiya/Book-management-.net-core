@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Author>
+
+<h1>Author List</h1>
+
+<a asp-action="create" class='btn btn-outline btn-primary bg-dark'>Add New Author</a>
+
+<p>Here you will see a List of Authors</p>
+
+<p>Total Authors: @Model.Count() </p>
+
+<table class="item-list table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Cover</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var author in Model)
+        {
+            <tr>
+                <td>
+                    <img  src="@author.PhotoUrl"/>
+                </td>
+                <td>
+                    @author.Name
+                </td>
+                <td>
+                    <a asp-action="details" asp-route-id=@author.Id  class='btn btn-primary btn-sm'>Details</a>
+                    <a asp-action="edit" asp-route-id=@author.Id class='btn btn-sm btn-secondary'>Edit</a>
+                    <a asp-action="delete" asp-route-id=@author.Id class='btn btn-sm btn-danger'>Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+

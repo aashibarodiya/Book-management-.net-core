@@ -1,0 +1,32 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.item-list img{
+    width:100px;
+    box-shadow:-2px -2px 2px gray;
+    margin:5px;
+}
+
+.cover-photo{
+    width:300px;
+    border:20px  solid black;
+    border-radius:20px;
+    box-shadow:-5px -5px 5px gray;
+    padding:20px;
+}

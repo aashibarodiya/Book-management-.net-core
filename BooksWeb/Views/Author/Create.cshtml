@@ -1,0 +1,32 @@
+﻿
+@model NewAuthorVM
+
+<h1>Add New Author</h1>
+page updated on @DateTime.Now.ToLongTimeString()
+
+<div class="text-danger">
+@Html.ValidationSummary()
+</div>
+
+<form asp-method="post" asp-action="Create" >
+
+    <div class='form-control-group'>
+        <label for="id" class="form-label">Id</label>
+        <input name="id" id="id" class="form-control" value="@Model.Id" />
+        <small class='text-danger'>@Html.ValidationMessageFor(m=>m.Id)</small>
+    </div>
+
+    <partial name="_AuthorEditor" />
+   
+    <p></p>
+    <input type="submit"  value="Add Author" 
+    class="btn form-control btn-primary bg-dark" />
+
+
+</form>
+
+@section Scripts{
+   <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+   <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+   <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

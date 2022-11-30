@@ -1,0 +1,22 @@
+﻿@model Author
+
+
+<h2>Update @Model.Name</h2>
+
+<div class="text-danger">
+@Html.ValidationSummary()
+</div>
+
+<form asp-action="Edit">
+     <div class='form-control-group'>
+        <label for="id" class="form-label">Id</label>
+        <input name="id" id="id" class="form-control" value="@Model.Id" disabled/>
+        <small class='text-info'>Id is not editible</small>
+    </div>
+
+    <partial name="_AuthorEditor"/>
+
+    <input type="submit" class="btn btn-primary bg-dark form-control" value="Save" />
+
+
+</form>

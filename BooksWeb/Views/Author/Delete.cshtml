@@ -1,0 +1,14 @@
+﻿@model Author
+
+
+<h2 class='text-danger'>Delete </h2>
+
+<p class='text-danger'>The Change is irriverisble</p>
+
+<partial name="_AuthorDetails" />
+
+<form method="post" asp-action="confirmdelete">
+    <input type="hidden" name="id" value="@Model.Id"/>
+    <input type="submit" class='btn btn-sm btn-danger' value="Yes! Delete @Model.Name"/>
+    <a class='btn btn-primary' asp-action="index">No I Changed my mind</a>
+</form>
